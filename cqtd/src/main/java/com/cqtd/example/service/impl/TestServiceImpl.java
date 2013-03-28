@@ -1,9 +1,10 @@
 package com.cqtd.example.service.impl;
 
-import org.apache.log4j.Logger;
-
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,11 @@ import com.cqtd.base.dao.BaseDao;
 import com.cqtd.base.service.impl.BaseServiceImpl;
 import com.cqtd.example.model.Ttest;
 import com.cqtd.example.service.TestService;
+import com.googlecode.ehcache.annotations.Cacheable;
+import com.googlecode.ehcache.annotations.KeyGenerator;
+import com.googlecode.ehcache.annotations.Property;
+import com.googlecode.ehcache.annotations.TriggersRemove;
+import com.googlecode.ehcache.annotations.When;
 
 @Service("testService")
 public class TestServiceImpl extends BaseServiceImpl<Ttest> implements TestService{
@@ -53,5 +59,34 @@ public class TestServiceImpl extends BaseServiceImpl<Ttest> implements TestServi
 			new Exception("testExcepton");
 		}
 	}
+
+	@Override
+	@TriggersRemove(cacheName="testCache", when = When.AFTER_METHOD_INVOCATION,removeAll=true)
+	public void editTestWithCache(String name) {
+		String  hql = "from Ttest where userName=:name";
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.put("name", name);
+		Ttest t = testDao.get(hql, params);
+		t.setUserName("editchange");
+		testDao.update(t);
+	}
+
+	@Override
+	@Cacheable(cacheName="testCache",keyGenerator = @KeyGenerator(
+			   name = "HashCodeCacheKeyGenerator", 
+			   properties = @Property(name="includeMethod", value="true")))
+	public String id2Name(String id) {
+		String result = "";
+		String  hql = "from Ttest where id=:id";
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.put("id", id);
+		Ttest t = testDao.get(hql, params);
+		if(t!=null){
+			result = t.getUserName();
+		}
+		return result;
+	}
+	
+	
 	
 }
