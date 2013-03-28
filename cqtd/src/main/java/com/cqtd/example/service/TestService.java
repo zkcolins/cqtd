@@ -5,5 +5,5 @@ import com.cqtd.example.model.Ttest;
 
 public interface TestService extends BaseService<Ttest> {
 	
-	public void saveObjectWithTrans();
+	public void doTransaction();
 }

@@ -36,13 +36,6 @@ public class TestAction {
 	}
 	*/
 	
-	@RequestMapping("/test")
-	public String test(){
-		testService.saveObjectWithTrans();
-		return "index";
-	}
-	
-	
 	@RequestMapping("/test2")
 	public String test2(){
 		

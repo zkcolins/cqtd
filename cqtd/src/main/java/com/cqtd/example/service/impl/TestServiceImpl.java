@@ -32,7 +32,7 @@ public class TestServiceImpl extends BaseServiceImpl<Ttest> implements TestServi
 
 	@SuppressWarnings("null")
 	@Override
-	public void saveObjectWithTrans() {
+	public void doTransaction() {
 		try {
 			Ttest t = new Ttest();
 			t.setUserName("jsckson");
