@@ -1,0 +1,21 @@
+[{
+			"text" : "备案列表",
+			"id" : "4",
+			"iconCls" : "Folder",
+			"stores" : "bastore",
+			"columns" : [{
+						text : '序号',
+						dataIndex : 'ID'
+					}, {
+						text : '公司名称',
+						dataIndex : 'kehu_name'
+					}],
+			"leaf" : true
+		}, {
+			"text" : "新增备案",
+			"id" : "5",
+			"iconCls" : "Folder",
+			"stores" : "",
+			"columns" : [],
+			"leaf" : true
+		}]

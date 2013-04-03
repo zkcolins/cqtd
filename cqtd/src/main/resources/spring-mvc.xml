@@ -8,7 +8,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- 自动扫描action包下的所有类，使其认为spring mvc的控制器 -->
 	<!-- 注：如果base-package=com.cqtd 则注解事务不起作用 TODO 读源码 -->
-	<context:component-scan base-package="com.cqtd.example.action" />
+	<context:component-scan base-package="com.cqtd.example.action,com.cqtd.menu.action" />
 	
 	<!-- 这种写法不行 注解事务不起作用，拿不到SESSION
 		<context:component-scan base-package="com.cqtd" >

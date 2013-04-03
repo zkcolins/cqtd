@@ -2,6 +2,7 @@ package com.cqtd.example.action;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,6 +23,7 @@ public class TestBaseAction {
 	 */
 	private static final Logger logger = Logger.getLogger(TestBaseAction.class);
 	
+	@Qualifier("testService")
 	private BaseService<Ttest> testService;
 
 	@Autowired
