@@ -19,9 +19,6 @@ import com.google.common.collect.Maps;
 @Controller
 @RequestMapping("/OA/menuAction")
 public class MenuAction {
-	/**
-	 * Logger for this class
-	 */
 	private static final Logger logger = Logger.getLogger(MenuAction.class);
 	
 	private MenuService menuService;
