@@ -16,13 +16,13 @@ Ext.define('OA.controller.Menu', {
 						})
 			},
 			loadMenu : function(selModel, record) {
-				// console.info(record);
+				console.info(record);
 				if (record.get('leaf')) {
 					var panel = Ext.getCmp(record.get('id'));
 					if (!panel) {
 						Ext.require(['Ext.grid.*']);
 						var rowEditing = Ext.create('Ext.grid.plugin.RowEditing',{
-							clicksToMoveEditor: 1,
+							clicksToMoveEditor: 2,
 		        			autoCancel: true
 						});
 						panel = Ext.create("Ext.grid.Panel", {

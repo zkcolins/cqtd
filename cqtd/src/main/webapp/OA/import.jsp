@@ -10,3 +10,6 @@
 <script type="text/javascript" src="../ext-4.2.0/ext-all-debug.js" charset="utf-8"></script>
 <script type="text/javascript" src="../ext-4.2.0/locale/ext-lang-zh_CN.js" charset="utf-8"></script>
 <script type="text/javascript" src="app.js"></script>
+<script type="text/javascript">
+    Ext.QuickTips.init();
+</script>

@@ -1,0 +1,33 @@
+Ext.define('mis.model.Module',{
+    extend:'Ext.data.Model',
+    fields:[{
+        name:'id',
+        type:'int'
+    },{
+        name:'text',
+        type:'string'
+    },{
+        name:'mgrUrl',
+        type:'string'
+    },{
+        name:'url',
+        type:'string'
+    },{
+        name:'orderNo',
+        type:'int'
+    },{
+        name:'leaf',
+        type:'bool'
+    },{
+        name:'iconCls',
+        type:'string'
+    },{
+        name:'parent',
+        type:'int'
+    },{
+        name:'direction',
+        type:'string'
+    }]
+});
+
+

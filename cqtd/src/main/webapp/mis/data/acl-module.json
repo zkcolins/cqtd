@@ -1,0 +1,57 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+{
+    SysAclModels:[{
+        'text':"模块管理",
+        "leaf":true,
+        'iconCls' : 'model-ico',//'tree-Module-ico',
+        'id':"ModuleManager",
+        'href':"module.ModuleTree",
+        "description" : "模块管理，在这里可以新增修改和删除模块"
+    },{
+        'text':"用户管理",
+        "leaf":true,
+        'iconCls' : 'tree-user-editor-ico',
+        'id':"UserManager",
+        'href':"user.UserGrid",
+        "description" : "在这里可以查看所有用户，并可以帮助修改用户密码等常规操作;"
+    }/*,{
+	"text":"人员管理",
+	"leaf":true,
+	"iconCls" : 'tree-person-ico',
+	"id":"PersonManager",
+        "href":"",
+        "description" : "帐户的详细信息，也是个人信息，这里可以维护个人和个人权限"
+    }*/,{
+        'text':"角色管理",
+        "leaf":true,
+        'iconCls' : 'tree-acl-ico',
+        'id':"RoleManager",
+        'href':"RoleManager",
+        "description" : "角色包括来宾、系统管理员、超级管理员、信息编辑、学生、老师、研究员等，都发球角色，这里可以维护角色和角色权限"
+    },{
+        'text':"组织机构管理",
+        "leaf":true,
+        'iconCls' : 'Organization-icon',
+        'id':"OrgManager",
+        'href':"org.OrganizationTree",
+        "description" : "组织机构管理"
+    }/*,{
+        'text':"词典管理",
+        "leaf":true,
+        'iconCls' : 'Dictionary-icon',
+        'id':"DictionaryManager",
+        'href':"DictionaryManager",
+        "description" : "词典管理"
+    },{
+        'text':"留言簿管理",
+        "leaf":true,
+        'iconCls' : 'msg-icon',
+        'id':"MsgManager",
+        'href':"MsgManager",
+        "description" : "外部用户对网站的评价，还有留言簿的管理"
+    }*/]
+    }
+
