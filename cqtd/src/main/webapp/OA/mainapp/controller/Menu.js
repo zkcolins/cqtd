@@ -1,6 +1,6 @@
 Ext.define('OA.controller.Menu', {
 			extend : 'Ext.app.Controller',
-			stores : ['bastore'],
+			stores : ['bastore','test'],
 			refs : [{
 						ref : 'smsmenu',
 						selector : 'smstablepanel'

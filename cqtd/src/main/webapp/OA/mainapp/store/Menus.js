@@ -1,8 +1,7 @@
 Ext.define('OA.store.Menus',{ 
     extend: 'Ext.data.TreeStore', 
     requires:'OA.model.Menu',
-    model:'OA.model.Menu'
-    /*
+    model:'OA.model.Menu',
     root: {  
         expanded: true  
     },  
@@ -11,5 +10,4 @@ Ext.define('OA.store.Menus',{
         
         url: 'menuAction/menulist.action'  
     }  
-	*/
 }) 

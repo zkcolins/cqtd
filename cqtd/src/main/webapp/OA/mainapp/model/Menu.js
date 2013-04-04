@@ -1,6 +1,7 @@
 Ext.define('OA.model.Menu', {
 			extend : 'Ext.data.Model',
-			fields : ['id', 'text', 'iconCls', 'stores', 'columns'],
+			fields : ['id', 'text', 'iconCls', 'stores', 'columns']
+			/*
 			root : {
 				expanded : true
 			},
@@ -9,4 +10,5 @@ Ext.define('OA.model.Menu', {
 				//url : '/server/MenuLoader.json'
 				url : 'menuAction/menulist.action'
 			}
+			*/
 		})
