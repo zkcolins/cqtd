@@ -5,6 +5,7 @@ Ext.define('OA.view.TabPanel',{
         Ext.apply(this,{ 
             id: 'content-panel', 
             region: 'center',  
+            title:'我的工作台',
             defaults: { 
                autoScroll:true
                //bodyPadding: 10 
@@ -12,7 +13,7 @@ Ext.define('OA.view.TabPanel',{
             margins: '0 1 1 0',
             activeTab: 0, 
             //border: false, 
-            plain: true, 
+            //plain: true, 
             items: [{ 
               id: 'HomePage', 
               title: '首页', 
