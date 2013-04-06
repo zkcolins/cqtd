@@ -6,12 +6,13 @@ Ext.define('OA.view.TabPanel',{
             id: 'content-panel', 
             region: 'center',  
             defaults: { 
-               autoScroll:true, 
-               bodyPadding: 10 
+               autoScroll:true
+               //bodyPadding: 10 
             }, 
+            margins: '0 1 1 0',
             activeTab: 0, 
-            border: false, 
-           //plain: true, 
+            //border: false, 
+            plain: true, 
             items: [{ 
               id: 'HomePage', 
               title: '首页', 

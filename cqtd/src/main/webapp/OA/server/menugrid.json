@@ -1,0 +1,19 @@
+{
+	"models" : [{
+				"iconCls" : "icon-menu",
+				"id" : "0",
+				"leaf" : false,
+				"mgrUrl" : "menu.MenuGrid",
+				"orderNo" : 0,
+				"parentId" : "",
+				"text" : "菜单管理"
+			}, {
+				"iconCls" : "icon-menu",
+				"id" : "1",
+				"leaf" : true,
+				"mgrUrl" : "menu.MenuGrid",
+				"orderNo" : 1,
+				"parentId" : "0",
+				"text" : "菜单管理"
+			}]
+}

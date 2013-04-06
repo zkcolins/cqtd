@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.cqtd.base.service.impl.BaseServiceImpl;
 import com.cqtd.menu.dao.MenuDao;
-import com.cqtd.menu.model.Menu2;
+import com.cqtd.menu.model.Module;
 import com.cqtd.menu.service.MenuService;
 
 @Service("menuService")
-public class MenuServiceImpl extends BaseServiceImpl<Menu2> implements MenuService {
+public class MenuServiceImpl extends BaseServiceImpl<Module> implements MenuService {
 	private MenuDao menuDao;
 
 	@Qualifier("menuDao")

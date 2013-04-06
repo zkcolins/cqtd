@@ -71,6 +71,8 @@ public class FooUtils {
 			throws IOException {
 		response.setCharacterEncoding(Charsets.UTF_8.toString());
 		response.setContentType("text/plain");
+		logger.info(JSON.toJSONString(new ImmutableMap.Builder<String, String>()
+				.put("success", "true").put("msg", "ok").build()));
 		response.getWriter().write(JSON.toJSONString(new ImmutableMap.Builder<String, String>()
 				.put("success", "true").put("msg", "ok").build()));
 	}

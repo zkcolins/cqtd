@@ -13,18 +13,17 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate(true)
 @DynamicInsert(true)
 public class Module {
-
 	@Id
 	@Column(name = "id",length = 36)
 	@javax.persistence.GeneratedValue(generator = "system-uuid")
 	@org.hibernate.annotations.GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
-	private Long id;
+	private String id;
 	@Column(length = 100,nullable = true)
 	private String text;
 	@Column(length = 100,nullable = true)
 	private String url;
 	@Column(length = 100,nullable = true)
-	private String mgrUrl;
+	private String mgrUrl;//模块URL
 	/**
 	 * 模块的排序号
 	 */
@@ -34,14 +33,14 @@ public class Module {
 	private boolean leaf;
 	@Column(length = 100,nullable = true)
 	private String iconCls;
-	@Column(length = 100,nullable = true)
-	private java.lang.Long parent;
+	@Column(length = 36,nullable = true)
+	private String parentId;
 	@Column(length = 2000,nullable = true)
 	private String direction;
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getText() {
@@ -80,11 +79,11 @@ public class Module {
 	public void setIconCls(String iconCls) {
 		this.iconCls = iconCls;
 	}
-	public java.lang.Long getParent() {
-		return parent;
+	public String getParentId() {
+		return parentId;
 	}
-	public void setParent(java.lang.Long parent) {
-		this.parent = parent;
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
 	}
 	public String getDirection() {
 		return direction;
