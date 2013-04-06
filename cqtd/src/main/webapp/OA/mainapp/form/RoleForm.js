@@ -63,23 +63,25 @@ Ext.define('OA.form.RoleForm',{
     },
     onSave: function(){
         var form = this.getForm();
-        console.info("----onSave--url:"+this.url);
+//        console.info("----onSave--url:"+this.url);
         
         if (form.isValid()) {
-        	console.info(form.isValid());
+//        	console.info(form.isValid());
             this.getForm().submit({
                 url:this.url,
                 //params:_params,
                 type:'ajax',
                 //waitTitle:"数据传送",
                 //waitMsg:"数据传递中,请稍候",//4.x此属性好像没有
-                scope:this,
-                /*
-                success: function() {
-                	console.info("Success");
-                }*/
+                //scope:this,
+                
+//                success: function() {
+//                	console.info("Success");
+//                }
                 success:this.onSave//成功了才到onSave去重置表单、传播事件
+               // success:this.onReset
             });
+//            console.info(form.getValues());
             this.fireEvent('create', this, form.getValues());
             console.info(form.isValid());
             form.reset();

@@ -11,7 +11,7 @@ Ext.define('OA.model.Menu', {
 				name : 'mgrUrl',
 				type : 'string'
 			}, {
-				name : 'url',
+				name : 'controlUrl',
 				type : 'string'
 			}, {
 				name : 'orderNo',

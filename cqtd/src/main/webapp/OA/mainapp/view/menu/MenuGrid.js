@@ -80,14 +80,14 @@ Ext.define('OA.view.menu.MenuGrid', {
                         Ext.Msg.confirm("系统提示", "确定要删除选中的记录吗?", function (_btn) {
                             if ('yes' == _btn) {
                                 var rec = grid.store.getAt(rowIndex);
-                                console.warn(rec.get('id'), rec.get('text'));
+//                                console.warn(rec.get('id'), rec.get('text'));
                                 Ext.Ajax.request({
                                     url:'/module/delete.action',
                                     params:{id:rec.get('id')},
                                     success:function (response) {
                                         //成功后，grid.store.remove(rec);
                                         var text = eval('(' + response.responseText + ')');
-                                        console.warn(text.success);
+//                                        console.warn(text.success);
                                         grid.store.remove(rec);
                                     }
                                 });
@@ -149,7 +149,7 @@ Ext.define('OA.view.menu.MenuGrid', {
                         text:'帮助',
                         iconCls:'help-ico',
                         handler:function () {
-                            console.log('help', 'icon');
+//                            console.log('help', 'icon');
                         }
                     }
                 ]
@@ -174,7 +174,7 @@ Ext.define('OA.view.menu.MenuGrid', {
         this.editingPlugin.startEdit(0, 0);
     },
     doInsertNode:function (grid, rowIndex, colIndex) {
-        console.warn(node,index);
+//        console.warn(node,index);
         var r = {
             text:'新模块名称',
             parent:'' || node.id,

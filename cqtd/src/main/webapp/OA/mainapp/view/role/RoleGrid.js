@@ -42,11 +42,13 @@ Ext.define('OA.view.role.RoleGrid',{
     initComponent: function(){
         
         this.tbar=[{
+        	xtype:'button',
             text:'Add Role',
             iconCls:'user-add',
             scope: this,
             handler: this.onAddClick
         },'-',{
+        	xtype:'button',
             text:'Update Role',
             iconCls:'user-edit',
             itemId:this.oldId+"Update",
@@ -54,6 +56,7 @@ Ext.define('OA.view.role.RoleGrid',{
             disabled: this.lock,
             handler:this.onEditorClick
         },'-',{
+        	xtype:'button',
             text:'Remove Role',
             disabled: this.lock,
             itemId:this.oldId+"Delete",
@@ -61,24 +64,27 @@ Ext.define('OA.view.role.RoleGrid',{
             scope:this,
             handler:this.onDeleteClick
         },'->',{
+        	xtype:'button',
             text:'refresh',
             iconCls:'refresh-icon',
             handler:function(){
-                console.log('refresh','click');
+//                console.log('refresh','click');
             },
             scope: this
         },'-',{
+        	xtype:'button',
             text:'export',
             iconCls:'print-icon',
             handler:function(){
-                console.log('export','click');
+//                console.log('export','click');
             },
             scope: this
         },'-',{
+        	xtype:'button',
             text:'help',
             iconCls:'help-ico',
             handler:function(){
-                console.log('help','click');
+//                console.log('help','click');
             },
             scope: this
         }];
@@ -105,7 +111,7 @@ Ext.define('OA.view.role.RoleGrid',{
             var data = e.record.data;
             var val = e.value;
             if(e.originalValue!=e.value){
-                console.warn('id:'+record.id,'attr:'+e.field +"  value: "+e.value);
+//                console.warn('id:'+record.id,'attr:'+e.field +"  value: "+e.value);
                 val = e.field == 'overTime' ? Ext.Date.format(e.value, 'Y-m-d') : e.value;
                 Ext.Ajax.request({
                     url: '/action/role/updateAttr.action',
@@ -116,7 +122,7 @@ Ext.define('OA.view.role.RoleGrid',{
                     },
                     success: function(response){
                         var text = eval('('+response.responseText+')');//Ext.JSON.decode(response.responseText).message;
-                        console.log('success: ',text.flag);
+//                        console.log('success: ',text.flag);
                     }
                 });
             }

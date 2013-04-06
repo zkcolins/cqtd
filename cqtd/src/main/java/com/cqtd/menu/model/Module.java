@@ -21,7 +21,7 @@ public class Module {
 	@Column(length = 100,nullable = true)
 	private String text;
 	@Column(length = 100,nullable = true)
-	private String url;
+	private String controlUrl;//Controller的URL，方便动态加载Controller
 	@Column(length = 100,nullable = true)
 	private String mgrUrl;//模块URL
 	/**
@@ -49,11 +49,11 @@ public class Module {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public String getUrl() {
-		return url;
+	public String getControlUrl() {
+		return controlUrl;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setControlUrl(String controlUrl) {
+		this.controlUrl = controlUrl;
 	}
 	public String getMgrUrl() {
 		return mgrUrl;

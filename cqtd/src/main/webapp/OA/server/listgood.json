@@ -1,0 +1,32 @@
+{
+	"datas" : [{
+				"id" : "0",
+				"name" : "皮带",
+				"price" : 100,
+				"status" : "0",
+				"discount" : 0.2,
+				"uptime" : "2013-3-9",
+				"countNumber" : 2,
+				"sellNumber":2,
+				"produceDate":"2012-3-9",
+				"timeLength":3,
+				"describe":"经典款",
+				"image":"",
+				"t_id":"0"
+			}, {
+				"id" : "1",
+				"name" : "牛皮帽",
+				"price" : 100,
+				"status" : "0",
+				"discount" : 0.2,
+				"uptime" : "2013-3-9",
+				"countNumber" : 2,
+				"sellNumber":2,
+				"produceDate":"2012-3-9",
+				"timeLength":3,
+				"describe":"经典款",
+				"image":"",
+				"t_id":"0"
+			}],
+	"total":2
+}

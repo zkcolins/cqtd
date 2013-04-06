@@ -23,8 +23,9 @@ Ext.define('OA.window.RoleWindow',{
         this.hide();
     },
     onSubmit:function(_form,data){
-        console.warn("Window: ",data);
+//        console.warn("Window: ",data);
         this.fireEvent('create', _form, data);
+//       console.warn("fire end");
         this.close();
     },
     setActiveRecord:function(record){
