@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50041
 File Encoding         : 65001
 
-Date: 2013-04-06 12:22:19
+Date: 2013-04-06 22:04:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,16 +28,17 @@ CREATE TABLE `t_module` (
   `orderNo` int(11) default NULL,
   `parentId` varchar(36) default NULL,
   `text` varchar(100) default NULL,
-  `url` varchar(100) default NULL,
+  `controlUrl` varchar(100) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_module
 -- ----------------------------
-INSERT INTO `t_module` VALUES ('0', null, 'icon-menu', '0', 'menu.MenuGrid', '0', '', '菜单管理', null);
-INSERT INTO `t_module` VALUES ('1', null, 'icon-menu', '1', 'menu.MenuGrid', '1', '0', '菜单管理', null);
-INSERT INTO `t_module` VALUES ('2', null, 'icon-menu', '1', 'role.RoleGrid', '2', '0', '角色管理', null);
+INSERT INTO `t_module` VALUES ('0', null, 'icon-menu', '0', '', '0', '', '系统管理', null);
+INSERT INTO `t_module` VALUES ('1', null, 'icon-menu', '1', 'menu.MenuGrid', '1', '0', '菜单管理', 'MenuController');
+INSERT INTO `t_module` VALUES ('2', null, 'icon-menu', '1', 'role.RoleGrid', '2', '0', '角色管理', 'RoleController');
+INSERT INTO `t_module` VALUES ('3', null, 'icon-menu', '1', 'good.GoodGrid', '3', '0', '货物管理', 'GoodController');
 
 -- ----------------------------
 -- Table structure for `t_role`
