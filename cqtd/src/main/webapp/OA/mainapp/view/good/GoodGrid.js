@@ -10,14 +10,15 @@ Ext.require([
 Ext.define("OA.view.good.GoodGrid",{
 	extend:"Ext.grid.Panel",
 	alias:"widget.good.goodgrid",
-	//store:Ext.create('OA.store.GoodStore'),
 	store:'GoodStore',//因为GoodController中已初始化了该STORE
+	border:0,
+	multiSelect:true,
+	margins: '0 1 1 0',
 	selModel:{
 		selType:"checkboxmodel"
 	},
-	border:0,
-	multiSelect:true,
-	frame:true,
+//	frame:true,
+	autoExpandColumn : 'describe',
 	tbar:[
 		{xtype:'button',text:'添加',id:'add',iconCls:'table_add'},
 		{xtype:'button',text:'删除',id:'delete',iconCls:'table_remove'},
@@ -155,16 +156,10 @@ Ext.define("OA.view.good.GoodGrid",{
 				id:"searchgroup"
 			}
 	],
-//	dockedItems:[{
-////		xtype:'pagingtoolbar',
-////		store:'GoodStore',
-////		dock:'bottom',
-////		displayInfo:true
-//	}],
 	enableKeyNav:true,  //可以使用键盘控制上下
 	columnLines:true, //展示竖线
-	columns:[
-		{text:"名称",dataIndex:"name",width:100,field:{
+	columns:[{
+		text:"名称",dataIndex:"name",width:100,field:{
 			xtype:"textfield"
 		}},
 		{text:"价格",dataIndex:"price",width:100,field:{
@@ -231,15 +226,17 @@ Ext.define("OA.view.good.GoodGrid",{
 			items:[{
 				id:'displa',
 				tooltip:'前台显示',
-				icon:"FMApp/GoodApp/view/image/good_up.png",
+				icon:"OA/mainapp/view/good/image/good_up.png",
 				handler:function(o,rowIndex,colIndex,e){
+					alert("out");
 					var store=o.getStore();
 					var obj=store.getAt(rowIndex);
 					var status=obj.get("status");
 					if(status!=0 && status!=null){
 						if(status==1 || status==2){
 						 Ext.Ajax.request({
-								url:"/buy360/jsongood/oper!grounding.action",
+								//url:"/buy360/jsongood/oper!grounding.action",
+						 		url:'',
 								params:{
 									id:obj.get("id")
 								},
@@ -271,7 +268,7 @@ Ext.define("OA.view.good.GoodGrid",{
 			},"","","",{
 				id:'display-no',
 				tooltip:'取消前台显示',
-				icon:"FMApp/GoodApp/view/image/good_down.png",
+				icon:"OA/view/good/image/good_down.png",
 				handler:function(o,rowIndex,colIndex,e){
 					var store=o.getStore();
 					var obj=store.getAt(rowIndex);
@@ -279,7 +276,8 @@ Ext.define("OA.view.good.GoodGrid",{
 					if(status!=0 && status!=null){
 						if(status==11 || status===22){
 						 Ext.Ajax.request({
-								url:"/buy360/jsongood/oper!undercarriage.action",
+								//url:"/buy360/jsongood/oper!undercarriage.action",
+						 		url:'',
 								params:{
 									id:obj.get("id")
 								},
@@ -318,21 +316,21 @@ Ext.define("OA.view.good.GoodGrid",{
 			items:[{
 				id:'crud-select',
 				tooltip:'查看',
-				icon:"FMApp/GoodApp/view/image/good_select.png",
+				//icon:"FMApp/GoodApp/view/image/good_select.png",
 				handler:function(o,item,rowIndex,colIndex,e){
 					Ext.Msg.alert("提示","此功能暂未实现！");
 				}
 			},"-","-","-","-",{
 				id:'crud-edit',
 				tooltip:'编辑',
-				icon:"FMApp/GoodApp/view/image/good_edit.png",
+				//icon:"FMApp/GoodApp/view/image/good_edit.png",
 				handler:function(o,item,rowIndex,colIndex,e){
 					Ext.Msg.alert("提示","此功能暂未实现！");
 				}
 			},"-","-","-","-",{
 				id:'crud-delete',
 				tooltip:'删除',
-				icon:"FMApp/GoodApp/view/image/good_delete.png",
+				//icon:"FMApp/GoodApp/view/image/good_delete.png",
 				handler:function(o,item,rowIndex,colIndex,e){
 					Ext.Msg.alert("提示","此功能暂未实现！");
 				}
@@ -342,14 +340,17 @@ Ext.define("OA.view.good.GoodGrid",{
 	initComponent:function(){
 		this.editing=Ext.create("Ext.grid.plugin.CellEditing");
 		this.plugins=[this.editing];
-		  this.dockedItems = [];//bbar   dockeItems:[{as},{asas}]
-            var paging = Ext.create('Ext.toolbar.Paging',{
-                     store:'GoodStore',
-                         dock:'bottom',
-                         displayInfo:true,
-                         autoShow:true,
-                         autoDestroy:true
-             });
+	  	this.dockedItems = [];//bbar   dockeItems:[{as},{asas}]
+        var paging = Ext.create('Ext.toolbar.Paging',{
+                 store:'GoodStore',
+                 dock:'bottom',
+                 displayInfo:true,
+                 displayMsg : '显示{0}条到{1}条,共{2}条',
+                 emptyMsg : "没有符合条件的记录",
+                 plugins: Ext.create('Ext.ux.ProgressBarPager'),// 分页进度条
+                 autoShow:true,
+                 autoDestroy:true
+         });
         this.dockedItems.push(paging);
 		this.callParent(arguments);
 	}

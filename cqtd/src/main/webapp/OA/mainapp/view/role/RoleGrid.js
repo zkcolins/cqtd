@@ -94,6 +94,8 @@ Ext.define('OA.view.role.RoleGrid',{
             store:this.store,
             dock:'bottom',
             displayInfo:true,
+            displayMsg : '显示{0}条到{1}条,共{2}条',
+            emptyMsg : "没有符合条件的记录",
             plugins: Ext.create('Ext.ux.ProgressBarPager')
         }];
         this.editing = Ext.create('Ext.grid.plugin.CellEditing');
