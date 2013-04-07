@@ -12,8 +12,10 @@ Ext.define("OA.view.good.GoodGrid",{
 	alias:"widget.good.goodgrid",
 	store:'GoodStore',//因为GoodController中已初始化了该STORE
 	border:0,
+	stripeRows: true,
 	multiSelect:true,
 	margins: '0 1 1 0',
+	autoScroll:true,
 	selModel:{
 		selType:"checkboxmodel"
 	},
@@ -159,16 +161,22 @@ Ext.define("OA.view.good.GoodGrid",{
 	enableKeyNav:true,  //可以使用键盘控制上下
 	columnLines:true, //展示竖线
 	columns:[{
-		text:"名称",dataIndex:"name",width:100,field:{
+		text:"名称",dataIndex:"name",
+		//width:100,
+		field:{
 			xtype:"textfield"
 		}},
-		{text:"价格",dataIndex:"price",width:100,field:{
+		{text:"价格",dataIndex:"price",
+		//width:100,
+		field:{
 			xtype:"numberfield",
 			step:0.05,
 			minValue:0,
 			decimalPrecision:2
 		}},
-		{text:"折扣价",dataIndex:"discount",width:100,field:{
+		{text:"折扣价",dataIndex:"discount",
+		//width:100,
+		field:{
 			xtype:"numberfield",
 			step:0.05,
 			minValue:0,
@@ -207,13 +215,17 @@ Ext.define("OA.view.good.GoodGrid",{
 			}	
 		},
 		*/
-		{text:"数量",dataIndex:"countNumber",width:100,field:{
+		{text:"数量",dataIndex:"countNumber",
+		//width:100,
+		field:{
 			xtype:"numberfield",
 			step:1,
 			minValue:0,
 			decimalPrecision:2
 		}},
-		{text:"生产日期",xtype:"datecolumn",dataIndex:"produceDate",width:100,format:"Y年m月d日"},
+		{text:"生产日期",xtype:"datecolumn",dataIndex:"produceDate",
+		//width:100,
+		format:"Y年m月d日"},
 		{text:"描述信息",dataIndex:"describe",width:150,field:{
 				xtype:"textfield",
 				allowBlank:false
@@ -222,11 +234,11 @@ Ext.define("OA.view.good.GoodGrid",{
 			xtype:"actioncolumn",
 			align:"center",
 			id:"display",
-			width:100,
+			//width:100,
 			items:[{
 				id:'displa',
 				tooltip:'前台显示',
-				icon:"OA/mainapp/view/good/image/good_up.png",
+				icon:"image/good/good_up.png",
 				handler:function(o,rowIndex,colIndex,e){
 					alert("out");
 					var store=o.getStore();
@@ -268,7 +280,7 @@ Ext.define("OA.view.good.GoodGrid",{
 			},"","","",{
 				id:'display-no',
 				tooltip:'取消前台显示',
-				icon:"OA/view/good/image/good_down.png",
+				icon:"image/good/good_down.png",
 				handler:function(o,rowIndex,colIndex,e){
 					var store=o.getStore();
 					var obj=store.getAt(rowIndex);
@@ -312,25 +324,25 @@ Ext.define("OA.view.good.GoodGrid",{
 			xtype:"actioncolumn",
 			align:"center",
 			id:"crud",
-			width:106,
+			//width:106,
 			items:[{
 				id:'crud-select',
 				tooltip:'查看',
-				//icon:"FMApp/GoodApp/view/image/good_select.png",
+				icon:"image/good/good_select.png",
 				handler:function(o,item,rowIndex,colIndex,e){
 					Ext.Msg.alert("提示","此功能暂未实现！");
 				}
 			},"-","-","-","-",{
 				id:'crud-edit',
 				tooltip:'编辑',
-				//icon:"FMApp/GoodApp/view/image/good_edit.png",
+				icon:"image/good/good_edit.png",
 				handler:function(o,item,rowIndex,colIndex,e){
 					Ext.Msg.alert("提示","此功能暂未实现！");
 				}
 			},"-","-","-","-",{
 				id:'crud-delete',
 				tooltip:'删除',
-				//icon:"FMApp/GoodApp/view/image/good_delete.png",
+				icon:"image/good/good_delete.png",
 				handler:function(o,item,rowIndex,colIndex,e){
 					Ext.Msg.alert("提示","此功能暂未实现！");
 				}

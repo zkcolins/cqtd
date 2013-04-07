@@ -74,7 +74,7 @@ Ext.define('OA.view.menu.MenuGrid', {
             width:50,
             items:[
                 {
-                    icon:'images/icons/delete.gif', // Use a URL in the icon config
+                    icon:'image/ext/delete.png', // Use a URL in the icon config
                     tooltip:'Remove current node',
                     handler:function (grid, rowIndex, colIndex) {
                         Ext.Msg.confirm("系统提示", "确定要删除选中的记录吗?", function (_btn) {
@@ -97,7 +97,7 @@ Ext.define('OA.view.menu.MenuGrid', {
                     scope:this
                 },
                 {
-                    icon:'images/icons/add.gif',
+                    icon:'image/ext/add.png',
                     handler:function (grid, rowIndex, colIndex) {
                         var rec = grid.store.getAt(rowIndex);
                         if(rec.data.leaf){
@@ -132,7 +132,7 @@ Ext.define('OA.view.menu.MenuGrid', {
                 xtype:'toolbar',
                 items:[
                     {
-                        icon:'images/icons/add.gif',
+                        icon:'image/ext/add.png',
                         text:'添加一级节点',
                         handler:this.doInsertRootNode,
                         scope:this

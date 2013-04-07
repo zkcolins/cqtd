@@ -1,13 +1,17 @@
 Ext.define('OA.view.Header', { 
     extend: 'Ext.Component', 
-    //bodyStyle:'background-image:url(cqtd/OA/images/head_bg.jpg)',
+    style: {
+        //color: '#FFFFFF',
+        background:'url(image/banner_background/default.png)'
+    },
     initComponent: function() { 
         Ext.applyIf(this, { 
             xtype: 'box', 
-            itemCls: 'header', 
+            //itemCls: 'header123456', 
             region: 'north', 
-            html: '<h1>OA管理系统</h1>', 
-            height: 60 
+            title:'管理系统',
+            html: '<h1>&nbsp;管理系统</h1>', 
+            height: 60
         }); 
         this.callParent(arguments); 
     } 
