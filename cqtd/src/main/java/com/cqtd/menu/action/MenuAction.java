@@ -23,7 +23,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 @Controller
-@RequestMapping("/OA/menuAction")
+@RequestMapping("/mis/menuAction")
 public class MenuAction {
 	private static final Logger logger = Logger.getLogger(MenuAction.class);
 	

@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cqtd.menu.action.MenuAction;
 import com.cqtd.role.model.Role;
 import com.cqtd.role.service.RoleService;
 import com.cqtd.util.FooUtils;
@@ -24,7 +23,7 @@ import com.google.common.collect.Maps;
 
 
 @Controller
-@RequestMapping("/OA/roleAction")
+@RequestMapping("/mis/roleAction")
 public class RoleAction {
 	private static final Logger logger = Logger.getLogger(RoleAction.class);
 	private RoleService roleService;
